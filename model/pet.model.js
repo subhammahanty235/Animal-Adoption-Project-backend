@@ -5,6 +5,9 @@ const PetSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
+    petid:{
+        type:String,
+    },
     location:{
         country:{
             type:String,
@@ -41,8 +44,11 @@ const PetSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    photes:{
+        type:[String]
+    },
     about:{
-
+        type:String,
     },
     type: {
         type: String,
@@ -80,3 +86,6 @@ const PetSchema = mongoose.Schema({
 
 
 })
+
+const Pet = mongoose.model('petposts', UserSchema)
+module.exports = Pet
