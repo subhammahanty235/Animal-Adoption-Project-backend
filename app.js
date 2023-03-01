@@ -29,7 +29,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-// app.use('/api/v1' , require('./routes/userRoutes'))
+app.use('/api/v1/auth' , require('./routes/auth'))
 // app.use('/api/v1' , require('./routes/tripRoutes'))
 // app.use('/api/v1',require('./routes/emailroutes'))
 

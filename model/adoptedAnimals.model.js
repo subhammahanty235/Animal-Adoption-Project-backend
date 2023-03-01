@@ -5,8 +5,6 @@ const AdoptedAnimalSchema = mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:'pet'
     },
-
-    
     postedby:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'user'
