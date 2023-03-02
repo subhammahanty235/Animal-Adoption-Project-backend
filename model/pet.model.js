@@ -5,7 +5,7 @@ const PetSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-    petid:{
+    petAdId:{
         type:String,
     },
     location:{
