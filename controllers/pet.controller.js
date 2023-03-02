@@ -16,6 +16,28 @@ const addNewPetAd = async(req,res)=>{
     }
 }
 
+const getPetAds = async(req,res)=>{
+    const {filterquery} = req.query
+    const {page , limit} = req.query
+    const options = {};
+    if(limit){
+        options.limit = parseInt(limit , 10);
+    }
+    if(page){
+        options.skip = (parseInt(page , 10)-1)* options.limit || 0;
+
+    }
+
+    const petAds = await Pet.find(filterquery , null , options)
+    .then((data)=>{
+        res.status(201).json({no_posts : len(data) , data:data})
+    })
+    .catch((err)=>{
+        res.status(404).json({ message: 'Internal error occured' });
+    })
+    
+
+}
 
 const deleteAd = async(req,res)=>{
     const userId = req.user.id;
@@ -42,5 +64,5 @@ const deleteAd = async(req,res)=>{
 
 
 
-module.exports = {addNewPetAd , deleteAd}
+module.exports = {addNewPetAd , deleteAd , getPetAds}
 
