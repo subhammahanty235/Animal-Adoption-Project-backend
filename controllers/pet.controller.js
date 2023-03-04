@@ -17,7 +17,7 @@ const addNewPetAd = async(req,res)=>{
 }
 
 const getPetAds = async(req,res)=>{
-    const {filterquery} = req.query
+    const {filterquery} = req.query || {type:"dog"}
     const {page , limit} = req.query
     const options = {};
     if(limit){
