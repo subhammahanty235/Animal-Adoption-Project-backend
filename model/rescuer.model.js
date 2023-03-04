@@ -15,6 +15,9 @@ const RescuerSchema = mongoose.Schema({
         lowercase: true,
 
     },
+    userId:{
+        type:String
+    },
     profilepic:{
         type:String,
     },
@@ -51,6 +54,21 @@ const RescuerSchema = mongoose.Schema({
         type:String,
         default:0
     },
+    socialmedia:{
+        facebook:{
+            type: String,
+        },
+        instagram:{
+            type: String,
+        },
+        linkedin:{
+            type: String,
+        },
+        youtube : {
+            type: String,
+        }
+
+    }
     
 
 
