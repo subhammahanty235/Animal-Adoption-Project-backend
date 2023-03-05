@@ -15,6 +15,7 @@ const NormalUserSchema = mongoose.Schema({
         lowercase: true,
 
     },
+    
     profilepic:{
         type:String,
     },
@@ -52,7 +53,21 @@ const NormalUserSchema = mongoose.Schema({
         }
 
     },
+    socialmedia:{
+        facebook:{
+            type: String,
+        },
+        instagram:{
+            type: String,
+        },
+        linkedin:{
+            type: String,
+        },
+        youtube : {
+            type: String,
+        }
 
+    }
     
     
 
