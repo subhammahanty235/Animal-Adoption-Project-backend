@@ -25,7 +25,13 @@ const AdoptedAnimalSchema = mongoose.Schema({
         giver:{
             type:String
         }
+    },
+    adopteddataSchemadata:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'adoptiondata'
     }
+
+
 
 
 
