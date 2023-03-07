@@ -30,8 +30,9 @@ app.use(function(req, res, next) {
 });
 
 app.use('/api/v1/auth' , require('./routes/auth'))
-// app.use('/api/v1' , require('./routes/tripRoutes'))
-// app.use('/api/v1',require('./routes/emailroutes'))
+app.use('/api/v1/user' , require('./routes/user'))
+app.use('/api/v1/rescuer',require('./routes/rescuer'))
+app.use('/api/v1/petad',require('./routes/pet'))
 
 app.get('/',(req,res)=>{
     res.send("Animal Adoption Project")
