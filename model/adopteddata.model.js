@@ -46,11 +46,64 @@ const AdoptedDataSchema = new mongoose.Schema({
         },
 
     },
-    adoptionmodelData :{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'adoptedanimals'
-    }
+    adopterData:{
+        name:{
+            type:String,
+        },
+        isrescuer:{
+            type:Boolean
+        },
+        contactDetails:{
+            email:{
+                type:String,
+            },
+            contactnumber:{
+                type:String,
+            },
+            socialmedia:{
+                facebook:{
+                    type: String,
+                },
+                instagram:{
+                    type: String,
+                },
+                linkedin:{
+                    type: String,
+                },
+                youtube : {
+                    type: String,
+                }
+            }
+        },
+        profilePic:{
+            type:String,
+        },
+        address:{
+            country: {
+                type: String,
+                required: true
+            },
+            state: {
+                type: String,
+                required: true
+            },
+            city: {
+                type: String,
+                required: true
+            }
+        },
 
+
+    },
+    dateofAdoption:{
+        type:Date,
+        default: Date.now()
+    },
+
+    prrofofAdoption : {
+        type : String ,
+        required : true,
+    }
 
 
 })

@@ -15,6 +15,11 @@ const NormalUserSchema = mongoose.Schema({
         lowercase: true,
 
     },
+
+    userId :{
+        type:mongoose.Schema.types.ObjectId,
+        ref:'user',
+    },
     
     profilepic:{
         type:String,

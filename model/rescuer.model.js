@@ -7,6 +7,7 @@ const RescuerSchema = mongoose.Schema({
         min: 3,
         max: 25,
     },
+
     email: {
         type: String,
         required: true,
@@ -16,7 +17,8 @@ const RescuerSchema = mongoose.Schema({
 
     },
     userId:{
-        type:String
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user',
     },
     profilepic:{
         type:String,
