@@ -74,10 +74,17 @@ const adoptionCompleted = async(req,res)=>{
             res.status(400).json({flag:false , message : "Error Occured in server"})
         })
 
+        
 
 
         
     } catch (error) {
         
     }
+}
+
+const getAllAdoptionDetails = async()=>{
+    const user = req.user.id;
+
+    
 }
