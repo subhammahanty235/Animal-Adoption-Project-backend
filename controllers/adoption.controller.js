@@ -74,17 +74,26 @@ const adoptionCompleted = async(req,res)=>{
             res.status(400).json({flag:false , message : "Error Occured in server"})
         })
 
-        
-
-
-        
     } catch (error) {
-        
+        res.json(error);
     }
 }
 
 const getAllAdoptionDetails = async()=>{
     const user = req.user.id;
+    if(!user){
+        return res.json({message:"Sorry you are not authorized"});
+    }
+    try {
+        const data = await AdoptionData.find({});
+        res.json(data);
+    } catch (error) {
+        res.json(error);
+    }
 
     
 }
+
+
+
+module.exports = {getAllAdoptionDetails , adoptionCompleted};
